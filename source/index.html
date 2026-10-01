@@ -19,7 +19,14 @@
     <!-- her photo starts downloading during the intro so it's ready when the curtain lifts -->
     <link rel="preload" as="image" href="./media/kavya.webp" fetchpriority="high" />
     <!-- the intro screen is drawn by plain HTML/CSS so it appears before any code runs -->
-    <style>body{background:#ff3d8b;margin:0}.boot{z-index:2000;background:#ff3d8b;place-items:center;display:grid;position:fixed;inset:0}.boot span{color:#ffd60a;text-shadow:8px 8px #15112e;font:400 clamp(7rem,30vw,20rem)/1 Shrikhand,Cooper Black,Georgia,serif;animation:.9s ease-in-out infinite alternate boot-pop}@keyframes boot-pop{0%{transform:scale(.92)rotate(-6deg)}to{transform:scale(1.04)rotate(4deg)}}@media (prefers-reduced-motion:reduce){.boot{display:none}}</style>
+    <style>
+      body { margin: 0; background: #ff3d8b; }
+      .boot { position: fixed; inset: 0; z-index: 2000; display: grid; place-items: center; background: #ff3d8b; }
+      .boot span { font: 400 clamp(7rem, 30vw, 20rem) / 1 'Shrikhand', 'Cooper Black', Georgia, serif; color: #ffd60a;
+        text-shadow: 8px 8px 0 #15112e; animation: boot-pop 0.9s ease-in-out infinite alternate; }
+      @keyframes boot-pop { from { transform: scale(0.92) rotate(-6deg); } to { transform: scale(1.04) rotate(4deg); } }
+      @media (prefers-reduced-motion: reduce) { .boot { display: none; } }
+    </style>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- fonts load without holding up the first paint -->
@@ -29,10 +36,9 @@
       media="print"
       onload="this.media='all'"
     />
-    <script type="module" crossorigin src="./assets/index-ViqGhydJ.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-BOA_9XPj.css">
   </head>
   <body>
     <div id="root"><div class="boot" aria-hidden="true"><span>5</span></div></div>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
